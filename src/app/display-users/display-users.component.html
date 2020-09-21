@@ -15,8 +15,15 @@
 		</thead>
 		<tbody>
 			<tr *ngFor="let user of users">
-				<td>a</td>
+				<td><i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i></td>
 				<td> <div class="photo" [ngStyle]="{'background-image':'url('+user.picture+')'}"></div> </td>
+				<td>{{user.name}}</td>
+				<td>{{user.fathersLastName}}</td>
+				<td>{{user.mothersLastName}}</td>
+				<td>{{user.email}}</td>
+				<td>{{roles[user.roleId-1].position}}</td>
+				<td>{{user.active}}</td>
+				<td></td>
 			</tr>
 		</tbody>
 	</table>

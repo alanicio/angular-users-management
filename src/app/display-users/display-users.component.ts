@@ -12,8 +12,8 @@ export class DisplayUsersComponent implements OnInit {
 	public roles;
 	constructor() {
 		this.users=JsonUsers.users;
-		this.roles=JsonRoles;
-		console.log(this.users);
+		this.roles=JsonRoles.roles;
+		console.log(this.roles);
 	}
 
 	ngOnInit(): void {
