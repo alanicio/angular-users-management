@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-users-management"
+    }
+  },
+  "defaultProject": "angular-users-management",
+  "cli": {
+    "analytics": false
+  }
 }
