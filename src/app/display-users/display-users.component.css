@@ -21,3 +21,12 @@ thead{
 td{
 	padding: 1% 0%;
 }
+
+.photo{
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 75px;
+}

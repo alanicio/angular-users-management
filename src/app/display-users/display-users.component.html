@@ -14,8 +14,9 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-			
+			<tr *ngFor="let user of users">
+				<td>a</td>
+				<td> <div class="photo" [ngStyle]="{'background-image':'url('+user.picture+')'}"></div> </td>
 			</tr>
 		</tbody>
 	</table>
