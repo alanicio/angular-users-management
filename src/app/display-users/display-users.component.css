@@ -58,6 +58,7 @@ tbody td:first-child{
 
 tbody td:last-child{
 	width: 15%;
+	color: #ff6a28;
 }
 
 /*checkbox switch*/

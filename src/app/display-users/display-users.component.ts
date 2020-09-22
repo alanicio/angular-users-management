@@ -9,6 +9,7 @@ export class DisplayUsersComponent implements OnInit {
 	@Input() users;
 	@Input() roles;
 	@Input() displayList:boolean;
+	@Input() deleteUser:Function;
 	constructor() {	}
 
 	ngOnInit(): void {

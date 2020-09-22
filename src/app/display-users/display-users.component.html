@@ -14,31 +14,31 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let user of users">
+			<tr *ngFor="let user of users | keyvalue">
 				<td><i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i></td>
-				<td> <div class="photo" [ngStyle]="{'background-image':'url('+user.picture+')'}"></div> </td>
-				<td>{{user.name}}</td>
-				<td>{{user.fathersLastName}}</td>
-				<td>{{user.mothersLastName}}</td>
-				<td>{{user.email}}</td>
-				<td>{{roles[user.roleId-1].position}}</td>
+				<td> <div class="photo" [ngStyle]="{'background-image':'url('+user.value.picture+')'}"></div> </td>
+				<td>{{user.value.name}}</td>
+				<td>{{user.value.fathersLastName}}</td>
+				<td>{{user.value.mothersLastName}}</td>
+				<td>{{user.value.email}}</td>
+				<td>{{roles[user.value.roleId-1].position}}</td>
 				<td>
 					<label class="switch">
 						<input type="checkbox" name="status" [checked]="user.active">
 						<span class="slider round"></span>
 					</label>
 				</td>
-				<td></td>
+				<td><i class="far fa-trash-alt" (click)="deleteUser(user.key)"></i></td>
 			</tr>
 		</tbody>
 	</table>
 	<div *ngIf="!displayList">
-		<div *ngFor="let user of users" class="card">
+		<div *ngFor="let user of users | keyvalue" class="card">
 			<div><i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i></div>
-			<div class="photo" [ngStyle]="{'background-image':'url('+user.picture+')'}"></div>
-			<div class="name">{{user.name}} {{user.fathersLastName}} {{user.mothersLastName}}</div>
-			<div class="mail"> {{user.email}} </div>
-			<div class="rol"> {{roles[user.roleId-1].position}} </div>
+			<div class="photo" [ngStyle]="{'background-image':'url('+user.value.picture+')'}"></div>
+			<div class="name">{{user.value.name}} {{user.value.fathersLastName}} {{user.value.mothersLastName}}</div>
+			<div class="mail"> {{user.value.email}} </div>
+			<div class="rol"> {{roles[user.value.roleId-1].position}} </div>
 			<hr>
 			<div class="underHr">
 				<label class="switch">

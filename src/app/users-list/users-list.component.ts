@@ -35,4 +35,8 @@ export class UsersListComponent implements OnInit {
 		this.users.unshift(user);
 	}
 
+	deleteUser=(index:number)=>{
+		this.users.splice(index,1);
+	}
+
 }
