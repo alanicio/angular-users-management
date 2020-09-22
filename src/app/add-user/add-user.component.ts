@@ -37,8 +37,7 @@ export class AddUserComponent implements OnInit {
 	    }
 	}
 
-	generateUser=(event:Event)=>{
-		event.preventDefault();
+	generateUser=()=>{
 		let user={
 			"picture": this.imageSrc,
 			"name": (<HTMLInputElement>document.getElementById("name")).value,

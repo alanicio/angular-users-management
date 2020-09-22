@@ -28,6 +28,7 @@ export class UsersListComponent implements OnInit {
 
 	displayHandler=()=>{
 		this.displayModal=!this.displayModal;
+		console.log(this.displayModal);
 	}
 
 	addUser=(user:object)=>{

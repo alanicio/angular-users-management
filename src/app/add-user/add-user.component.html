@@ -1,58 +1,56 @@
 <div class="modal" style="display: {{modalStatus()}}" >
 	<div class="modalContent">
-		<form (submit)="generateUser($event)">
-			<div class="title">
-				Agregar nuevo usuario
+		<div class="title">
+			Agregar nuevo usuario
+		</div>
+		<div class="section">
+			<div class="sectionTitle">
+				Foto de perfil
 			</div>
-			<div class="section">
-				<div class="sectionTitle">
-					Foto de perfil
-				</div>
-				<div class="photoPrototype" [ngStyle]="{'background-image':'url('+imageSrc+')'}">
-				</div>
-				<div class="inputFile">
-					<div class="description"> JPG,PNG | Tamaño minimo de 300px &times; 300px </div>
-					<label for="photo-upload" class="fakeInput">
-					    Subir Foto
-					</label>
-					<input type="file" name="photo" id="photo-upload" (change)="readURL($event);" required="">
-				</div>
+			<div class="photoPrototype" [ngStyle]="{'background-image':'url('+imageSrc+')'}">
 			</div>
-			<div class="section">
-				<div class="sectionTitle">
-					Información básica
-				</div>
+			<div class="inputFile">
+				<div class="description"> JPG,PNG | Tamaño minimo de 300px &times; 300px </div>
+				<label for="photo-upload" class="fakeInput">
+				    Subir Foto
+				</label>
+				<input type="file" name="photo" id="photo-upload" (change)="readURL($event);" required="">
+			</div>
+		</div>
+		<div class="section">
+			<div class="sectionTitle">
+				Información básica
+			</div>
 
-				<div class="inputForm">
-					<input type="text" placeholder="Nombre" id="name" required="">
-				</div>
-				<div class="inputForm">
-					<input type="text" placeholder="Apellido paterno" id="lastName" required="">
-				</div>
-				<div class="inputForm">
-					<input type="text" placeholder="Apellido materno" id="mothersLastName" required="">
-				</div>
-				<div class="inputForm">
-					<input type="text" placeholder="Correo electrónico" id="mail" required="">
-				</div>
-				<div class="inputForm">
-					<select id="rol" required="">
-						<option disabled selected value> Rol </option>
-						<option *ngFor="let rol of roles" [value]="rol.id">{{rol.position}}</option>
-					</select>
-				</div>
-				<div class="inputForm">
-					<label class="switch">
-						<input type="checkbox" name="status" id="status">
-						<span class="slider round"></span>
-					</label>
-				</div>
+			<div class="inputForm">
+				<input type="text" placeholder="Nombre" id="name" required="">
 			</div>
-			<hr>
-			<div class="buttonsZone">
-				<button (click)="displayHandler()">Cancelar</button>
-				<button type="submit">Guardar usuario</button>
+			<div class="inputForm">
+				<input type="text" placeholder="Apellido paterno" id="lastName" required="">
 			</div>
-		</form>
+			<div class="inputForm">
+				<input type="text" placeholder="Apellido materno" id="mothersLastName" required="">
+			</div>
+			<div class="inputForm">
+				<input type="text" placeholder="Correo electrónico" id="mail" required="">
+			</div>
+			<div class="inputForm">
+				<select id="rol" required="">
+					<option disabled selected value> Rol </option>
+					<option *ngFor="let rol of roles" [value]="rol.id">{{rol.position}}</option>
+				</select>
+			</div>
+			<div class="inputForm">
+				<label class="switch">
+					<input type="checkbox" name="status" id="status">
+					<span class="slider round"></span>
+				</label>
+			</div>
+		</div>
+		<hr>
+		<div class="buttonsZone">
+			<button (click)="displayHandler()">Cancelar</button>
+			<button (click)="generateUser()">Guardar usuario</button>
+		</div>
 	</div>
 </div>
