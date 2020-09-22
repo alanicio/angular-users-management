@@ -111,11 +111,57 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/*mosaics*/
+
+.card{
+	width: 20%;
+	margin-left: 4%;
+	margin-top: 2%;
+	display: inline-block;
+	border: 1px solid #e8e8e8;
+}
+
+.card div:first-child{
+	color: #cfcfcf;
+	transform: scale(1, 1.25) !important;
+	margin-left: 2%;
+	margin-top: 2%;
+}
+
+.card div:nth-child(n+2){
+	margin: auto;
+	text-align: center;
+}
+
+.card .photo{
+	margin-top: 7%;
+	width: 100px;
+	height: 100px;
+	background-size: 100px;
+}
+
+.card div:nth-child(n+2){
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #7c7c7c;
+	margin-bottom: 7%;
+}
+
+.card .name{
+	color: #182134 !important;
+	font-size: 15px !important;
+}
+
+.card hr{
+	border-top: 1px solid #e8e8e8;
+	border-bottom: 0px;
+	width: 80%;
 }

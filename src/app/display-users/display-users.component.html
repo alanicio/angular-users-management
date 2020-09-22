@@ -32,4 +32,18 @@
 			</tr>
 		</tbody>
 	</table>
+	<div *ngIf="!displayList">
+		<div *ngFor="let user of users" class="card">
+			<div><i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i></div>
+			<div class="photo" [ngStyle]="{'background-image':'url('+user.picture+')'}"></div>
+			<div class="name">{{user.name}} {{user.fathersLastName}} {{user.mothersLastName}}</div>
+			<div class="mail"> {{user.email}} </div>
+			<div class="rol"> {{roles[user.roleId-1].position}} </div>
+			<hr>
+			<label class="switch">
+				<input type="checkbox" name="status" [checked]="user.active">
+				<span class="slider round"></span>
+			</label>
+		</div>
+	</div>
 </div>
