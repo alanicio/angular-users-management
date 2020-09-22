@@ -22,7 +22,7 @@
 <div class="container">
 	<div class="tools">
 		<div class="search">
-			Búsqueda <input type="text">
+			Búsqueda <input type="text" (keyup)="searchHandler()" id="search">
 		</div>
 		<div class="selects">
 			<select>
@@ -46,4 +46,12 @@
 		</div>
 	</div>
 </div>
-<display-users [displayList]="displayList" [users]="users" [roles]="roles" [deleteUser]="deleteUser" [editUser]="editUser"></display-users>
+<display-users
+	[displayList]="displayList"
+	[users]="users"
+	[roles]="roles"
+	[deleteUser]="deleteUser"
+	[editUser]="editUser"
+	[search]="search"
+>
+</display-users>

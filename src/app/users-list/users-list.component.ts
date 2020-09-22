@@ -13,12 +13,14 @@ export class UsersListComponent implements OnInit {
 	public users;
 	public roles;
 	public edit;
+	public search;
 	constructor() {
 		this.displayList=true;
 		this.displayModal=false;
 		this.users=JsonUsers.users;
 		this.roles=JsonRoles.roles;
 		this.edit=-1;
+		this.search="";
 	}
 
 	ngOnInit(): void {
@@ -61,6 +63,10 @@ export class UsersListComponent implements OnInit {
 
 	replaceUser=(user,index)=>{
 		this.users.splice(index,1,user);
+	}
+
+	searchHandler=()=>{
+		this.search=(<HTMLInputElement>document.getElementById("search")).value;
 	}
 
 }
