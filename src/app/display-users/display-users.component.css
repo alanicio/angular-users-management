@@ -170,3 +170,16 @@ input:checked + .slider:before {
 .card .underHr{
 	padding: 4% 10%;
 }
+
+.underHr div{
+	display: inline-block;
+}
+
+.underHr .options{
+	float: right;
+	color: #ff6a28;
+}
+
+.options{
+	cursor: pointer;
+}
