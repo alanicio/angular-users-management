@@ -15,7 +15,7 @@
   background-color: #fefefe;
   margin: auto;
   border: 1px solid #888;
-  width: 40%;
+  width: 35%;
   padding: 2% 7%;
   overflow: hidden;
 }
@@ -55,6 +55,28 @@
 
 .inputFile{
   margin-left: 15%;
+  width: 50%;
+}
+
+.inputFile .description{
+  color: #959595;
+  font-size: 14px;
+  margin-bottom: 5%;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.fakeInput{
+  background-color: #ff6a28;
+  color: white;
+  padding: 3% 5%;
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .inputForm{
@@ -62,9 +84,20 @@
   margin-top: 4%;
 }
 
+.inputForm input,.inputForm select{
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+  background-color: #f9f9f9;
+  border:1px solid #e8e8e8;
+  padding: 5% 9%;
+}
+
 hr{
   width: 160%;
   margin-left: -20%;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: none;
 }
 
 /*checkbox switch*/
@@ -126,4 +159,32 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/*under hr*/
+
+.buttonsZone{
+  float: right;
+  width: 60%;
+}
+
+.buttonsZone button{
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+  background-color: transparent;
+  padding: 4% 8%;
+  cursor: pointer;
+}
+
+.buttonsZone button:first-child{
+  border: none;
+  color:#ff6a28;
+  margin-right: 10%;
+}
+
+.buttonsZone button:nth-child(2){
+  border:none;
+  background-color: #ff6a28;
+  color: white;
 }
