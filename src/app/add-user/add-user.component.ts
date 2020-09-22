@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AddUserComponent implements OnInit {
 	@Input() displayModal:boolean;
 	@Input() displayHandler:Function;
+	@Input() addUser:Function;
 	public imageSrc;
 	constructor() { }
 
@@ -33,6 +34,19 @@ export class AddUserComponent implements OnInit {
 
 	        reader.readAsDataURL(file);
 	    }
+	}
+
+	generateUser=()=>{
+		let user={
+			"picture": this.imageSrc,
+			"name": "Alan",
+			"fathersLastName": "Ramirez",
+			"mothersLastName": "Narváez",
+			"email": "alan@gmail.com",
+			"roleId": 1,
+			"active": false
+		};
+		this.addUser(user);
 	}
 
 }

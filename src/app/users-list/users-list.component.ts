@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import JsonUsers from '../../assets/users.json';
+import JsonRoles from '../../assets/roles.json';
 
 @Component({
   selector: 'users-list',
@@ -8,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class UsersListComponent implements OnInit {
 	public displayList:boolean;
 	public displayModal:boolean;
+	public users;
+	public roles;
 	constructor() {
 		this.displayList=true;
 		this.displayModal=false;
+		this.users=JsonUsers.users;
+		this.roles=JsonRoles.roles;
 	}
 
 	ngOnInit(): void {
@@ -22,6 +28,10 @@ export class UsersListComponent implements OnInit {
 
 	displayHandler=()=>{
 		this.displayModal=!this.displayModal;
+	}
+
+	addUser=(user:object)=>{
+		this.users.unshift(user);
 	}
 
 }
