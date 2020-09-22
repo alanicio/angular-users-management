@@ -46,7 +46,7 @@ export class AddUserComponent implements OnInit {
 			"mothersLastName": (<HTMLInputElement>document.getElementById("mothersLastName")).value,
 			"email": (<HTMLInputElement>document.getElementById("mail")).value,
 			"roleId": (<HTMLInputElement>document.getElementById("rol")).value,
-			"active": false
+			"active": (<HTMLInputElement>document.getElementById("status")).value,
 		};
 		this.addUser(user);
 		this.displayHandler();
