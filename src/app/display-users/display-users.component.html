@@ -22,7 +22,12 @@
 				<td>{{user.mothersLastName}}</td>
 				<td>{{user.email}}</td>
 				<td>{{roles[user.roleId-1].position}}</td>
-				<td>{{user.active}}</td>
+				<td>
+					<label class="switch">
+						<input type="checkbox" name="status" [checked]="user.active">
+						<span class="slider round"></span>
+					</label>
+				</td>
 				<td></td>
 			</tr>
 		</tbody>
