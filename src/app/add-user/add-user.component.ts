@@ -26,8 +26,6 @@ export class AddUserComponent implements OnInit {
 		else{
 			this.imageSrc="";
 		}
-		console.log(this.edit);
-		console.log(this.users[this.edit]);
 	}
 
 	modalStatus=()=>{
@@ -58,7 +56,7 @@ export class AddUserComponent implements OnInit {
 			"mothersLastName": (<HTMLInputElement>document.getElementById("mothersLastName")).value,
 			"email": (<HTMLInputElement>document.getElementById("mail")).value,
 			"roleId": (<HTMLInputElement>document.getElementById("rol")).value,
-			"active": (<HTMLInputElement>document.getElementById("status")).value,
+			"active": (<HTMLInputElement>document.getElementById("status")).checked,
 		};
 		if(this.edit<0){
 			this.addUser(user);
