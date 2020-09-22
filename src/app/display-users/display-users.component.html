@@ -40,10 +40,12 @@
 			<div class="mail"> {{user.email}} </div>
 			<div class="rol"> {{roles[user.roleId-1].position}} </div>
 			<hr>
-			<label class="switch">
-				<input type="checkbox" name="status" [checked]="user.active">
-				<span class="slider round"></span>
-			</label>
+			<div class="underHr">
+				<label class="switch">
+					<input type="checkbox" name="status" [checked]="user.active">
+					<span class="slider round"></span>
+				</label>
+			</div>
 		</div>
 	</div>
 </div>

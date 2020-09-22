@@ -64,7 +64,7 @@ tbody td:last-child{
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 25px;
 }
 
 .switch input { 
@@ -88,8 +88,8 @@ tbody td:last-child{
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 18px;
+  width: 18px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -106,9 +106,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(33px);
+  -ms-transform: translateX(33px);
+  transform: translateX(33px);
 }
 
 .slider.round {
@@ -136,9 +136,14 @@ input:checked + .slider:before {
 	margin-top: 2%;
 }
 
-.card div:nth-child(n+2){
+.card .photo,.card .name,.card .mail, .card .rol{
 	margin: auto;
 	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #7c7c7c;
+	margin-bottom: 7%;
+
 }
 
 .card .photo{
@@ -146,13 +151,6 @@ input:checked + .slider:before {
 	width: 100px;
 	height: 100px;
 	background-size: 100px;
-}
-
-.card div:nth-child(n+2){
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	color: #7c7c7c;
-	margin-bottom: 7%;
 }
 
 .card .name{
@@ -164,4 +162,8 @@ input:checked + .slider:before {
 	border-top: 1px solid #e8e8e8;
 	border-bottom: 0px;
 	width: 80%;
+}
+
+.card .underHr{
+	padding: 4% 10%;
 }
