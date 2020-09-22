@@ -12,11 +12,13 @@ export class UsersListComponent implements OnInit {
 	public displayModal:boolean;
 	public users;
 	public roles;
+	public edit;
 	constructor() {
 		this.displayList=true;
 		this.displayModal=false;
 		this.users=JsonUsers.users;
 		this.roles=JsonRoles.roles;
+		this.edit=-1;
 	}
 
 	ngOnInit(): void {
@@ -33,6 +35,7 @@ export class UsersListComponent implements OnInit {
 		(document.getElementById("mail") as HTMLInputElement).value="";
 		(document.getElementById("rol") as HTMLInputElement).value="";
 		(document.getElementById("status") as HTMLInputElement).checked=false;
+		this.edit=-1;
 		this.displayModal=!this.displayModal;
 	}
 
@@ -44,14 +47,20 @@ export class UsersListComponent implements OnInit {
 		this.users.splice(index,1);
 	}
 
-	editUser=(user)=>{
+	editUser=(index)=>{
 		this.displayHandler();
+		this.edit=index;
+		let user=this.users[index];
 		(document.getElementById("name") as HTMLInputElement).value=user.name;
 		(document.getElementById("lastName") as HTMLInputElement).value=user.fathersLastName;
 		(document.getElementById("mothersLastName") as HTMLInputElement).value=user.mothersLastName;
 		(document.getElementById("mail") as HTMLInputElement).value=user.email;
 		(document.getElementById("rol") as HTMLInputElement).value=user.roleId;
 		(document.getElementById("status") as HTMLInputElement).checked=user.active;
+	}
+
+	replaceUser=(user,index)=>{
+		this.users.splice(index,1,user);
 	}
 
 }

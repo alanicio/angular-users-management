@@ -10,10 +10,24 @@ export class AddUserComponent implements OnInit {
 	@Input() displayHandler:Function;
 	@Input() addUser:Function;
 	@Input() roles;
+	@Input() edit;
+	@Input() users;
+	@Input() replaceUser:Function;
 	public imageSrc;
 	constructor() { }
 
 	ngOnInit(): void {
+	}
+
+	ngOnChanges(){
+		if(this.edit>-1){
+			this.imageSrc=this.users[this.edit].picture;
+		}
+		else{
+			this.imageSrc="";
+		}
+		console.log(this.edit);
+		console.log(this.users[this.edit]);
 	}
 
 	modalStatus=()=>{
@@ -32,7 +46,6 @@ export class AddUserComponent implements OnInit {
 
 	        const reader = new FileReader();
 	        reader.onload = e => this.imageSrc = reader.result;
-
 	        reader.readAsDataURL(file);
 	    }
 	}
@@ -47,7 +60,12 @@ export class AddUserComponent implements OnInit {
 			"roleId": (<HTMLInputElement>document.getElementById("rol")).value,
 			"active": (<HTMLInputElement>document.getElementById("status")).value,
 		};
-		this.addUser(user);
+		if(this.edit<0){
+			this.addUser(user);
+		}
+		else{
+			this.replaceUser(user,this.edit);
+		}
 		this.displayHandler();
 	}
 
