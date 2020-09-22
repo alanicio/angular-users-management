@@ -9,6 +9,7 @@ export class AddUserComponent implements OnInit {
 	@Input() displayModal:boolean;
 	@Input() displayHandler:Function;
 	@Input() addUser:Function;
+	@Input() roles;
 	public imageSrc;
 	constructor() { }
 
@@ -36,17 +37,19 @@ export class AddUserComponent implements OnInit {
 	    }
 	}
 
-	generateUser=()=>{
+	generateUser=(event:Event)=>{
+		event.preventDefault();
 		let user={
 			"picture": this.imageSrc,
-			"name": "Alan",
-			"fathersLastName": "Ramirez",
-			"mothersLastName": "Narváez",
-			"email": "alan@gmail.com",
-			"roleId": 1,
+			"name": (<HTMLInputElement>document.getElementById("name")).value,
+			"fathersLastName": (<HTMLInputElement>document.getElementById("lastName")).value,
+			"mothersLastName": (<HTMLInputElement>document.getElementById("mothersLastName")).value,
+			"email": (<HTMLInputElement>document.getElementById("mail")).value,
+			"roleId": (<HTMLInputElement>document.getElementById("rol")).value,
 			"active": false
 		};
 		this.addUser(user);
+		this.displayHandler();
 	}
 
 }
