@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import JsonUsers from '../../assets/users.json';
 import JsonRoles from '../../assets/roles.json';
 
@@ -10,10 +10,11 @@ import JsonRoles from '../../assets/roles.json';
 export class DisplayUsersComponent implements OnInit {
 	public users;
 	public roles;
+	@Input() displayList:boolean;
 	constructor() {
 		this.users=JsonUsers.users;
 		this.roles=JsonRoles.roles;
-		console.log(this.roles);
+		console.log(this.displayList);
 	}
 
 	ngOnInit(): void {

@@ -31,9 +31,9 @@
 			</select>
 		</div>
 		<div class="list-display">
-			<i class="fas fa-list"></i>
-			<i class="fas fa-th"></i>
+			<i class="fas fa-list" [ngStyle]="{'color':displayList?'#ff6a28':'#bcbcbc'}" (click)="changeDisplay(true)"></i>
+			<i class="fas fa-th" [ngStyle]="{'color':!displayList?'#ff6a28':'#bcbcbc'}" (click)="changeDisplay(false)"></i>
 		</div>
 	</div>
 </div>
-<display-users></display-users>
+<display-users [displayList]="displayList"></display-users>

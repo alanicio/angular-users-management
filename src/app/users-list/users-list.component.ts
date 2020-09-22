@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent implements OnInit {
+	public displayList:boolean;
+	constructor() {
+		this.displayList=true;
+	}
 
-  constructor() { }
+	ngOnInit(): void {
+	}
 
-  ngOnInit(): void {
-  }
+	changeDisplay=(displayList:boolean)=>{
+		this.displayList=displayList;
+	}
 
 }
