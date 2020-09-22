@@ -1,0 +1,44 @@
+<div class="modal" style="display: {{modalStatus()}}" >
+	<div class="modalContent">
+		<div class="title">
+			Agregar nuevo usuario
+		</div>
+		<div class="section">
+			<div class="sectionTitle">
+				Foto de perfil
+			</div>
+			<div class="photoPrototype">
+			</div>
+			<div class="inputFile">
+				<input type="file" name="photo">
+			</div>
+		</div>
+		<div class="section">
+			<div class="sectionTitle">
+				Información básica
+			</div>
+			<div class="inputForm">
+				<input type="text" placeholder="Nombre">
+			</div>
+			<div class="inputForm">
+				<input type="text" placeholder="Apellido paterno">
+			</div>
+			<div class="inputForm">
+				<input type="text" placeholder="Apellido materno">
+			</div>
+			<div class="inputForm">
+				<input type="text" placeholder="Correo electrónico">
+			</div>
+			<div class="inputForm">
+				<select>
+					<option disabled selected value> Rol </option>
+				</select>
+			</div>
+		</div>
+		<hr>
+		<div class="buttonsZone">
+			<button (click)="displayHandler()">Cancelar</button>
+			<button>Guardar usuario</button>
+		</div>
+	</div>
+</div>

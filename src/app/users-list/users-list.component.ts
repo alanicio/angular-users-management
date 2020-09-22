@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersListComponent implements OnInit {
 	public displayList:boolean;
+	public displayModal:boolean;
 	constructor() {
 		this.displayList=true;
+		this.displayModal=false;
 	}
 
 	ngOnInit(): void {
@@ -16,6 +18,10 @@ export class UsersListComponent implements OnInit {
 
 	changeDisplay=(displayList:boolean)=>{
 		this.displayList=displayList;
+	}
+
+	displayHandler=()=>{
+		this.displayModal=!this.displayModal;
 	}
 
 }

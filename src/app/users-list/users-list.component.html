@@ -1,3 +1,4 @@
+<add-user [displayModal]="displayModal" [displayHandler]="displayHandler"></add-user>
 <div class="header">
 	<div class="half">	
 		<div class="title">Usuarios</div>
@@ -5,7 +6,7 @@
 	</div>
 	<div class="half">
 		<button> <i class="far fa-eye"></i>  Previsualizar</button>
-		<button>  <i class="fas fa-plus"></i> Agregar nuevo usuario</button>
+		<button (click)="displayHandler()">  <i class="fas fa-plus"></i> Agregar nuevo usuario</button>
 	</div>
 </div>
 
