@@ -27,8 +27,13 @@ export class UsersListComponent implements OnInit {
 	}
 
 	displayHandler=()=>{
+		(document.getElementById("name") as HTMLInputElement).value="";
+		(document.getElementById("lastName") as HTMLInputElement).value="";
+		(document.getElementById("mothersLastName") as HTMLInputElement).value="";
+		(document.getElementById("mail") as HTMLInputElement).value="";
+		(document.getElementById("rol") as HTMLInputElement).value="";
+		(document.getElementById("status") as HTMLInputElement).checked=false;
 		this.displayModal=!this.displayModal;
-		console.log(this.displayModal);
 	}
 
 	addUser=(user:object)=>{
@@ -37,6 +42,16 @@ export class UsersListComponent implements OnInit {
 
 	deleteUser=(index:number)=>{
 		this.users.splice(index,1);
+	}
+
+	editUser=(user)=>{
+		this.displayHandler();
+		(document.getElementById("name") as HTMLInputElement).value=user.name;
+		(document.getElementById("lastName") as HTMLInputElement).value=user.fathersLastName;
+		(document.getElementById("mothersLastName") as HTMLInputElement).value=user.mothersLastName;
+		(document.getElementById("mail") as HTMLInputElement).value=user.email;
+		(document.getElementById("rol") as HTMLInputElement).value=user.roleId;
+		(document.getElementById("status") as HTMLInputElement).checked=user.active;
 	}
 
 }

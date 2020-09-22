@@ -24,11 +24,11 @@
 				<td>{{roles[user.value.roleId-1].position}}</td>
 				<td>
 					<label class="switch">
-						<input type="checkbox" name="status" [checked]="user.active">
+						<input type="checkbox" name="status" [checked]="user.value.active">
 						<span class="slider round"></span>
 					</label>
 				</td>
-				<td><i class="far fa-trash-alt" (click)="deleteUser(user.key)"></i></td>
+				<td><i class="far fa-trash-alt" (click)="deleteUser(user.key)"></i>&nbsp;<i class="far fa-edit" (click)="editUser(user.value)"></i></td>
 			</tr>
 		</tbody>
 	</table>
@@ -42,7 +42,7 @@
 			<hr>
 			<div class="underHr">
 				<label class="switch">
-					<input type="checkbox" name="status" [checked]="user.active">
+					<input type="checkbox" name="status" [checked]="user.value.active">
 					<span class="slider round"></span>
 				</label>
 			</div>
