@@ -36,8 +36,9 @@
 				<option value="2">Ordenar Z - A</option>
 			</select>
 
-			<select>
-				<option value="todos">Todos</option>
+			<select (change)="changeRol($event.target.value)">
+				<option value="0">Todos</option>
+				<option *ngFor="let rol of roles" [value]="rol.id">{{rol.position}}</option>
 			</select>
 		</div>
 		<div class="list-display">
@@ -53,5 +54,6 @@
 	[deleteUser]="deleteUser"
 	[editUser]="editUser"
 	[search]="search"
+	[selectedRol]="selectedRol"
 >
 </display-users>

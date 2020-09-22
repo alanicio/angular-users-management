@@ -14,6 +14,7 @@ export class UsersListComponent implements OnInit {
 	public roles;
 	public edit;
 	public search;
+	public selectedRol;
 	constructor() {
 		this.displayList=true;
 		this.displayModal=false;
@@ -21,6 +22,7 @@ export class UsersListComponent implements OnInit {
 		this.roles=JsonRoles.roles;
 		this.edit=-1;
 		this.search="";
+		this.selectedRol=0;
 	}
 
 	ngOnInit(): void {
@@ -67,6 +69,10 @@ export class UsersListComponent implements OnInit {
 
 	searchHandler=()=>{
 		this.search=(<HTMLInputElement>document.getElementById("search")).value;
+	}
+
+	changeRol=(id)=>{
+		this.selectedRol=id;
 	}
 
 }
