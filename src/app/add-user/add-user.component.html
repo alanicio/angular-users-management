@@ -7,10 +7,11 @@
 			<div class="sectionTitle">
 				Foto de perfil
 			</div>
-			<div class="photoPrototype">
+			<div class="photoPrototype" [ngStyle]="{'background-image':'url('+imageSrc+')'}">
 			</div>
+
 			<div class="inputFile">
-				<input type="file" name="photo">
+				<input type="file" name="photo" (change)="readURL($event);">
 			</div>
 		</div>
 		<div class="section">

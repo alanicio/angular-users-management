@@ -48,6 +48,9 @@
   border-radius: 50%;
   background-color: #f4f4f4;
   border:1px solid #ebebeb;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120px;
 }
 
 .inputFile{
