@@ -33,7 +33,7 @@
 		</tbody>
 	</table>
 	<div *ngIf="!displayList">
-		<div *ngFor="let user of users | keyvalue" class="card">
+		<div *ngFor="let user of filterUsers() | keyvalue" class="card">
 			<div><i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i></div>
 			<div class="photo" [ngStyle]="{'background-image':'url('+user.value.picture+')'}"></div>
 			<div class="name">{{user.value.name}} {{user.value.fathersLastName}} {{user.value.mothersLastName}}</div>
